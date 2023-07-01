@@ -117,7 +117,8 @@ function Main() {
   );
 }
 
-function Posts({ posts }) {
+function Posts() {
+  const { posts } = useContext(PostContext);
   return (
     <section>
       <List posts={posts} />
@@ -125,7 +126,8 @@ function Posts({ posts }) {
   );
 }
 
-function FormAddPost({ onAddPost }) {
+function FormAddPost() {
+  const { onAddPost } = useContext(PostContext);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
@@ -154,7 +156,8 @@ function FormAddPost({ onAddPost }) {
   );
 }
 
-function List({ posts }) {
+function List() {
+  const { posts } = useContext(PostContext);
   return (
     <ul>
       {posts.map((post, i) => (
